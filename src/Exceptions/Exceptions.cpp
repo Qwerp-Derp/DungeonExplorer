@@ -8,4 +8,10 @@ namespace DungeonExplorer{
             return "Missing Method in Hero/Enemy Class File";
         } 
     };
+
+    struct InvalidFileStream : public std::exception{
+        const char * what() const trow(){
+            return "Unable to Open File Stream";
+        }
+    };
 };

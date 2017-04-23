@@ -12,7 +12,7 @@ if checkGCC == errorText:
     #install gcc and load mods
 else:
     print("GCC exists")
+     #load mods
     os.chdir("src/game/game.cpp")
-    subprocess.call("g++ -std=c++11 game.cpp -o game.exe", shell = True)
+    subprocess.call("g++ -std=c++11 game.cpp -o game.exe", shell=True)
     print("Mods have been installed")
-    #load mods
