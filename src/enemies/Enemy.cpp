@@ -6,15 +6,16 @@
 
 class Enemy {
     public:
-        Enemy(std::string enemyName, std::string enemyType, int baseDamage, int specialDamage){
+        Enemy(std::string enemyName, std::string enemyType, int baseDamage, int specialDamage, int HP){
+            this->HP = HP;
             this->enemyName = enemyName;
             this->enemyType = enemyType;
             this->baseDamage = baseDamage;
             this->specialDamage = specialDamage;
         }
         
-        virtual void attack() = 0;
-        virtual void draw() = 0;
+        //virtual void attack(Hero hero, std::string attackType);
+        //virtual void draw();
         
         template<class T>
         void setValue(std::string setter, T value) {
@@ -27,6 +28,8 @@ class Enemy {
             }else if(setter == "baseDamage") {
                 this->baseDamage = value;
                 return;
+            }else if(setter == "HP"){
+                this->HP = value;
             }else if(setter == "specialDamage") {
                 this->baseDamage = value;
                 return;
@@ -42,7 +45,7 @@ class Enemy {
                 returner = this->enemyName;
             }else if(getter == "enemyType") {
                 returner = this->enemyType;
-            }else {
+            }else{
                 returner = "Invalid Getter";
             }
             return returner;
@@ -54,8 +57,10 @@ class Enemy {
                 returner = this->baseDamage;
             }else if(getter == "specialDamage") {
                 returner = this->specialDamage;
+            }else if(getter == "HP"){
+                return this->HP;    
             }else{
-                returner = 0xAFD1087DFC;
+                returner = 0xAFD108;
             }
             return returner;
         }
@@ -64,5 +69,6 @@ class Enemy {
         std::string enemyName,
                     enemyType;
         int baseDamage,
-            specialDamage;
+            specialDamage,
+            HP;
 };
