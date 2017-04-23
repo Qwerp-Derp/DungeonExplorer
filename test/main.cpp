@@ -1,5 +1,5 @@
-#include "../src/heroes/classes/Wizard/Wizard.cpp"
-#include "../src/enemies/classes/Goblin/Goblin.cpp"
+#include "../src/Heroes/classes/Wizard/Wizard.cpp"
+#include "../src/Enemies/classes/Goblin/Goblin.cpp"
 
 int main(void){
     Goblin Geoff("Geoff");
